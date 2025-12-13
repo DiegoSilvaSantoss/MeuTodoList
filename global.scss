@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+:root {
+
+    --backgSpanFormHover: linear-gradient(90deg, #21c2ef 0%, #000d7d 100%);
+    --backgButton: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    --backgButtonHover: linear-gradient(90deg, #21c2ef 0%, #000d7d 100%);
+    --backgSpan1: rgb(138, 255, 138);
+    --backgSpan2: rgb(255, 138, 138);
+    --backgSpan1Hover: rgb(72, 255, 72);
+    --backgSpan2Hover: rgb(255, 86, 86);
+
+    --colorButton: rgb(255, 255, 255);
+    --colorIconlist2: rgb(185, 0, 0);
+    --colorIconlist1: green;
+    --colorIconFormHover: rgb(219, 219, 219);
+
+    --borderInputHover: solid 2px #000d7d;
+
+    --shadowForm: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --shadowList: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --shadowInput: rgb(38, 57, 77) 0px 20px 30px -10px;
+    --shadowButton: rgb(38, 57, 77) 0px 20px 30px -10px;
+    --shadowLi: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    --transitionSpanForm: 0.3s ease;
+    --transitionButton: 0.5s ease;
+    --transitionInputFocus: 0.5s ease;
+    --transitionLi: 0.5s ease;
+ 
+    --transformButtonHover: translateY(-5px) scale(1.1);
+    --transformInputFocus: translateY(-5px) scale(1.01);
+    --transformSpanIconActive: translateY(-5px) scale(1.01);
+    --transformSpanList1: translateX(-5px) scale(1.08);
+    --transformSpanList2: translateX(5px) scale(1.08);
+    --transformLiHover: translateY(-4px) scale(1.01);
+
+}
+
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 50px;
+    font-size: 18px;
+
+    & form {
+        width: 28rem;
+        height: 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--shadowForm);
+
+        & .input-box {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            position: relative;
+
+            & span {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                transition: var(--transitionSpanForm);
+
+                & i {
+                    font-size: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: var(--colorIconFormHover);
+                    }
+                }
+
+                &:hover {
+                    background: var(--backgSpanFormHover);
+                }
+
+                &.active {
+                    transform: var(--transformInputFocus);
+                }
+            }
+
+            & input {
+                width: 75%;
+                padding: 10px 35px;
+                border-radius: 10px;
+                border: solid 1px;
+                outline: none;
+                font-weight: bold;
+                transition: var(--transitionInputFocus);
+
+                &:focus {
+                    transform: var(--transformInputFocus);
+                    border: var(--borderInputHover);
+                    box-shadow: var(--shadowInput);
+                }
+            }
+
+            & button {
+                padding: 10px 15px;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                color: var(--colorButton);
+                font-weight: bold;
+                background: var(--backgButton);
+                transition: var(--transitionButton);
+
+                &:hover {
+                    transform: var(--transformButtonHover);
+                    box-shadow: var(--shadowButton);
+                    background: var(--backgButtonHover);
+                }
+            }
+        }
+    }
+
+
+
+    & .list {
+        width: 28rem;
+        height: 30rem;
+        border-radius: 10px;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-shadow: var(--shadowList);
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0;
+            list-style-type: none;
+
+            & li {
+                padding: 10px;
+                position: relative;
+                border-radius: 10px;
+                box-shadow: var(--shadowLi);
+                transition: var(--transitionLi);
+
+                & span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                & span:nth-child(1) {
+                    position: absolute;
+                    font-size: 25px;
+                    top: 7px;
+                    right: 45px;
+                    background-color: var(--backgSpan1);
+
+                    & i {
+                        color: var(--colorIconlist1)
+                    }
+
+                    &:hover {
+                        transform: var(--transformSpanList1);
+                        background-color: var(--backgSpan1Hover);
+                    }
+                }
+
+                & span:nth-child(2) {
+                    position: absolute;
+                    top: 7px;
+                    font-size: 20px;
+                    right: 10px;
+                    background-color: var(--backgSpan2);
+
+                    & i {
+                        color: var(--colorIconlist2);
+                    }
+
+                    &:hover {
+                        transform: var(--transformSpanList2);
+                        background-color: var(--backgSpan2Hover);
+                    }
+                }
+
+                &:hover {
+                    transform: var(--transformLiHover);
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 720px) {
+    body {
+
+        & .list {
+            height: 40rem;
+        }
+    }
+}

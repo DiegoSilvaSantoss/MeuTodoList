@@ -3,36 +3,38 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./global.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
 </head>
 
 <body>
+
     <form>
 
-        <h1>Lista de Tarefas</h1>
+        <h1 class="title">Todo List</h1>
 
-        <div class="caixa-input">
-            <i class="fa-regular fa-keyboard"></i>
-            <input type="text" placeholder="Digite sua tarefa" maxlength="35" required>
-            <button type="submit">Adicionar</button>
-
-            <span id="contador"></span>
+        <div class="input-box">
+            <span><i class="bi-keyboard"></i></span>
+            <input type="text" placeholder="Digite sua tarefa" required>
+            <button class="btn" type="submit">Adicionar</button>
         </div>
 
-        <div class="caixa-ul">
-            <ul>
-
-            </ul>
-        </div>
 
     </form>
+
+    <article class="list">
+        <ul>
+            <li>Estudar hj e agora
+                <span><i class="bi-check"></i></span>
+                <span><i class="bi-trash3"></i></span>
+            </li>
+
+        </ul>
+    </article>
+
 </body>
-<script src="./scripts.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="./main.js"></script>
+
 </html>

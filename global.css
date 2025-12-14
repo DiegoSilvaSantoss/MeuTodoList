@@ -138,6 +138,7 @@ body .list ul li {
   border-radius: 10px;
   box-shadow: var(--shadowLi);
   transition: var(--transitionLi);
+  animation: liMovie 0.5s ease;
 }
 body .list ul li span {
   display: flex;
@@ -181,6 +182,14 @@ body .list ul li:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+@keyframes liMovie {
+  to {
+    transform: scale(1.1);
+  }
+  from {
+    transform: scale(0.1);
+  }
+}
 @media only screen and (max-width: 720px) {
   body .list {
     height: 40rem;

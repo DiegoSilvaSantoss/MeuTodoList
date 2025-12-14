@@ -162,6 +162,7 @@ body {
                 border-radius: 10px;
                 box-shadow: var(--shadowLi);
                 transition: var(--transitionLi);
+                animation: liMovie 0.5s ease;
 
                 & span {
                     display: flex;
@@ -217,7 +218,19 @@ body {
 }
 
 
+// ANIMAÇÃO DA LI
+@keyframes liMovie {
+    to{
+        transform: scale(1.1);
+    }
 
+    from{
+        transform: scale(0.1);
+    }
+}
+
+
+// RESPONSIVIDADE PRA SMARTPHONE
 @media only screen and (max-width: 720px) {
     body {
 

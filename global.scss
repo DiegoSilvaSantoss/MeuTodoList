@@ -16,6 +16,7 @@
     --backgSpan2: rgb(255, 138, 138);
     --backgSpan1Hover: rgb(72, 255, 72);
     --backgSpan2Hover: rgb(255, 86, 86);
+    --backgLiActive: rgba(0, 197, 0, 0.66);
 
     --colorButton: rgb(255, 255, 255);
     --colorIconlist2: rgb(185, 0, 0);
@@ -24,6 +25,8 @@
 
     --borderInputFocus: solid 2px #000d7d;
     --borderLiHover: solid 1.5px #000d7d;
+    --borderLiActive: solid 0.1px black;
+    --borderLiHoverActive: solid 1.5px #85ff7e;
 
     --shadowForm: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     --shadowList: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -215,6 +218,24 @@ body {
                     transform: var(--transformLiHover);
                     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                     border: var(--borderLiHover);
+                }
+
+                &.active {
+                    background-color: var(--backgLiActive);
+                    border: var(--borderLiActive);
+
+                    &:hover {
+                        border: var(--borderLiHoverActive);
+                    }
+                }
+
+                &.active-check {
+                    border: solid 1.5px darkgreen;
+                }
+
+                &.active-trash {
+                    border: solid 1.5px rgb(188, 0, 0);
+                    background-color: rgb(255, 183, 183);
                 }
             }
         }

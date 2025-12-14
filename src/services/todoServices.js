@@ -1,6 +1,6 @@
 import { carregarLista, salvarLista } from "../repository/saveList.js";
 
-export default function initForm() {
+export default function todoServices() {
     const form = document.body.querySelector('form');
     const campoInput = document.body.querySelector('input');
     const ul = document.body.querySelector('ul');

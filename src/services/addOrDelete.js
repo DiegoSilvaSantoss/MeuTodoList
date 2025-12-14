@@ -1,20 +1,22 @@
-
 export default function addOrDelete() {
     const ul = document.querySelector('ul');
-    
+    if (!ul) return;
 
-    //CLICK NA LISTA
     ul.addEventListener('click', e => {
 
-        // Apagar
-        if (e.target.classList.contains('bi-trash3')) {
-            e.target.closest('li').remove();
+        // APAGAR ITEM
+        const trash = e.target.closest('.bi-trash3');
+        if (trash) {
+            const li = trash.closest('li');
+            if (li) li.remove();
+            return;
         }
 
-        // Marcar como feito
-        if (e.target.classList.contains('bi-check')) {
-            const li = e.target.closest('li');
-            li.classList.add('active');
+        // MARCAR / DESMARCAR COMO FEITO
+        const check = e.target.closest('.bi-check');
+        if (check) {
+            const li = check.closest('li');
+            if (li) li.classList.toggle('active');
         }
     });
 }

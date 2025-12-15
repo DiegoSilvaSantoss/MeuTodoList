@@ -4,7 +4,7 @@ export default function addOrDelete() {
 
     ul.addEventListener('click', e => {
 
-        // APAGAR ITEM
+        // APAGAR MINHA LISTA
         const trash = e.target.closest('.bi-trash3');
         if (trash) {
             const li = trash.closest('li');
@@ -12,7 +12,7 @@ export default function addOrDelete() {
             return;
         }
 
-        // MARCAR / DESMARCAR COMO FEITO
+        // MARCAR E DESMARCAR A MINHA LISTA COMO FEITO
         const check = e.target.closest('.bi-check');
         if (check) {
             const li = check.closest('li');
